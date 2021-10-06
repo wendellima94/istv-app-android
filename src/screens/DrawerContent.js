@@ -1,6 +1,12 @@
 import React from "react";
-import { StyleSheet, View, Image, Linking, Share } from "react-native";
-
+import {
+  StyleSheet,
+  View,
+  Image,
+  Linking,
+  Share,
+  ScrollView,
+} from "react-native";
 // import { DefaultTheme, DarkTheme } from "@react-navigation/native";
 
 import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
