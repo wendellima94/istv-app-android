@@ -9,6 +9,7 @@ export const Container = styled.ImageBackground`
 `;
 
 export const Content = styled.View`
+  padding-top: 80px;
   justify-content: center;
   align-items: center;
 `;
@@ -16,12 +17,12 @@ export const ImgPlayStyle = styled.Image`
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
-  width: 80px;
-  height: 80px;
-`;
-export const ImglogoStyle = styled.Image`
   width: 60px;
   height: 60px;
+`;
+export const ImglogoStyle = styled.Image`
+  width: 100px;
+  height: 100px;
   margin-top: 60px;
   margin-bottom: 10px;
 `;

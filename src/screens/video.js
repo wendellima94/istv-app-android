@@ -3,7 +3,7 @@ import { View, StyleSheet, Button, Dimensions } from "react-native";
 import { Video, AVPlaybackStatus } from "expo-av";
 import * as ScreenOrientation from "expo-screen-orientation";
 
-const Live = () => {
+const AoVivo = () => {
   const video = React.useRef(null);
   const [status, setStatus] = React.useState({});
 
@@ -54,4 +54,4 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
-export default Live;
+export default AoVivo;

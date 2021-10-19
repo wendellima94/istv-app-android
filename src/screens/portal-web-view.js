@@ -37,6 +37,7 @@ const PortalWebView = () => {
   return (
     <>
       <WebView
+        style={{ marginTop: 80 }}
         source={{ uri: "https://isnportal.com.br/ultimas-noticias/" }}
         javaScriptEnabled={true}
         domStorageEnabled={true}

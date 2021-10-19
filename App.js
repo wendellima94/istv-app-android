@@ -1,20 +1,12 @@
 import React from "react";
 
-import Home from "./src/components/home/index";
-import Live from "./src/components/live";
-import Menu from "./src/components/menu";
-import PortalWebView from "./src/screens/portal-web-view";
-import Router from './src/router'
+import Router from "./src/router";
+// import AoVivo from "./src/screens/video";
 const App = () => {
-  return(
+  return (
     <Router />
-
-    // <Home />
-    // // <Live />
-    // <Menu />
-    // <PortalWebView />
-  ) 
-
+    // <AoVivo />
+  );
 };
 
 export default App;

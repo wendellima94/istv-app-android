@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   StyleSheet,
   View,
@@ -11,24 +10,41 @@ import {
   SafeAreaView,
   TouchableOpacity,
 } from "react-native";
-
 import { Title, Caption, Drawer, Switch } from "react-native-paper";
-
 import { createAppContainer } from "react-navigation";
-import { DrawerActions, createDrawerNavigator } from "react-navigation-drawer";
+import {
+  DrawerActions,
+  createDrawerNavigator,
+  DrawerItems,
+} from "react-navigation-drawer";
 import { createStackNavigator } from "react-navigation-stack";
-
 import Home from "./components/home";
+import About from "./components/about";
 import Live from "./components/live";
-import Menu from "./components/menu";
 import PortalWebView from "./screens/portal-web-view";
-
+// import ProgrammingGridTv from "./screens/programming-grid-tv";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const navigationOptions = ({ navigation }) => {
+  const toHome = () => navigation.navigate("HomePage");
+
   return {
     headerTransparent: true,
-    headerTitle: () => false,
+    headerTitle: () => (
+      <View>
+        <TouchableOpacity onPress={toHome}>
+          <View
+            style={{
+              alignItems: "center",
+              justifyContent: "flex-end",
+              flexDirection: "row",
+            }}
+          >
+            <Icon name="home-outline" color={"white"} size={30} />
+          </View>
+        </TouchableOpacity>
+      </View>
+    ),
     headerLeft: () => (
       <TouchableOpacity
         style={{ paddingLeft: 10 }}
@@ -42,28 +58,13 @@ const navigationOptions = ({ navigation }) => {
   };
 };
 
-const Stacknavigator = createStackNavigator(
-  {
-    HomePage: {
-      screen: Home,
-      navigationOptions,
-    },
-    LivePage: {
-      screen: Live,
-      navigationOptions,
-    },
-  },
-  {
-    navigationOptions,
-  }
-);
-
-const customDrawerComponent = (props) => {
+const customDrawerComponent = (props, { navigation }) => {
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
 
   const toggleTheme = () => {
     setIsDarkTheme(!isDarkTheme);
   };
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View
@@ -83,47 +84,13 @@ const customDrawerComponent = (props) => {
           <Caption style={styles.caption}>www.istv.com.br</Caption>
         </View>
       </View>
+
       <Drawer.Section
         style={{ paddingTop: 10, borderTopColor: "#f4f4f4", borderTopWidth: 1 }}
       >
-        <TouchableOpacity
-          onPress={() => <PortalWebView />}
-          style={{ marginBottom: 10 }}
-        >
-          <View style={{ alignItems: "center", flexDirection: "row" }}>
-            <Icon
-              style={{ marginLeft: 10 }}
-              name="home"
-              color={"#464646"}
-              size={35}
-            />
-            <Text style={{ marginLeft: 15 }}>Página inicial</Text>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={{ marginBottom: 10 }} onPress={() => null}>
-          <View style={{ alignItems: "center", flexDirection: "row" }}>
-            <Icon
-              style={{ marginLeft: 10 }}
-              name="book-open-page-variant"
-              color={"#464646"}
-              size={35}
-            />
-            <Text style={{ marginLeft: 15 }}>Notícias</Text>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={{ marginBottom: 10 }} onPress={() => null}>
-          <View style={{ alignItems: "center", flexDirection: "row" }}>
-            <Icon
-              style={{ marginLeft: 10 }}
-              name="dots-vertical-circle"
-              color={"#464646"}
-              size={35}
-            />
-            <Text style={{ marginLeft: 15 }}>Sobre</Text>
-          </View>
-        </TouchableOpacity>
+        <ScrollView>
+          <DrawerItems {...props} />
+        </ScrollView>
       </Drawer.Section>
 
       <ScrollView>
@@ -149,9 +116,9 @@ const customDrawerComponent = (props) => {
                 style={{ marginLeft: 10 }}
                 name="facebook"
                 color={"#3b5998"}
-                size={35}
+                size={30}
               />
-              <Text style={{ marginLeft: 15 }}>Facebook</Text>
+              <Text style={{ marginLeft: 30 }}>Facebook</Text>
             </View>
           </TouchableOpacity>
 
@@ -166,9 +133,9 @@ const customDrawerComponent = (props) => {
                 style={{ marginLeft: 10 }}
                 name="instagram"
                 color={"#517fa4"}
-                size={35}
+                size={30}
               />
-              <Text style={{ marginLeft: 15 }}>Instagram</Text>
+              <Text style={{ marginLeft: 30 }}>Instagram</Text>
             </View>
           </TouchableOpacity>
 
@@ -181,9 +148,9 @@ const customDrawerComponent = (props) => {
                 style={{ marginLeft: 10 }}
                 name="twitter"
                 color={"#00acee"}
-                size={35}
+                size={30}
               />
-              <Text style={{ marginLeft: 15 }}>Twitter</Text>
+              <Text style={{ marginLeft: 30 }}>Twitter</Text>
             </View>
           </TouchableOpacity>
 
@@ -200,9 +167,9 @@ const customDrawerComponent = (props) => {
                 style={{ marginLeft: 10 }}
                 name="youtube"
                 color={"#c4302b"}
-                size={35}
+                size={30}
               />
-              <Text style={{ marginLeft: 15 }}>Youtube</Text>
+              <Text style={{ marginLeft: 30 }}>Youtube</Text>
             </View>
           </TouchableOpacity>
 
@@ -215,9 +182,9 @@ const customDrawerComponent = (props) => {
                 style={{ marginLeft: 10 }}
                 name="whatsapp"
                 color={"#34af23"}
-                size={35}
+                size={30}
               />
-              <Text style={{ marginLeft: 15 }}>WhatsApp</Text>
+              <Text style={{ marginLeft: 30 }}>WhatsApp</Text>
             </View>
           </TouchableOpacity>
 
@@ -234,9 +201,9 @@ const customDrawerComponent = (props) => {
             <View style={{ alignItems: "center", flexDirection: "row" }}>
               <Image
                 source={require("./images/content/icons/playstore.png")}
-                style={{ marginLeft: 10 ,width: 35, height: 35 }}
+                style={{ marginLeft: 10, width: 30, height: 30 }}
               />
-              <Text style={{ marginLeft: 15 }}>Avaliação</Text>
+              <Text style={{ marginLeft: 30 }}>Avaliação</Text>
             </View>
           </TouchableOpacity>
 
@@ -253,30 +220,112 @@ const customDrawerComponent = (props) => {
                 style={{ marginLeft: 10 }}
                 name="link"
                 color={"black"}
-                size={35}
+                size={30}
               />
-              <Text style={{ marginLeft: 15 }}>Compartilhar</Text>
+              <Text style={{ marginLeft: 30 }}>Compartilhar</Text>
             </View>
           </TouchableOpacity>
         </Drawer.Section>
       </ScrollView>
 
       <Drawer.Section style={styles.bottomDrawerSection}>
-        {/* BUTTON LINK */}
-        <Image
-          style={{ width: 250, height: 66 }}
-          source={require("./images/content/_botao.png")}
-        />
+        <TouchableOpacity
+          style={{ paddingBottom: 10 }}
+          onPress={() => Linking.openURL("https://istv.com.br/")}
+        >
+          <View>
+            <Image
+              style={{ width: 250, height: 66 }}
+              source={require("./images/content/_botao.png")}
+            />
+          </View>
+        </TouchableOpacity>
       </Drawer.Section>
     </SafeAreaView>
   );
 };
+
+const Stacknavigator = createStackNavigator(
+  {
+    HomePage: {
+      screen: Home,
+      navigationOptions,
+    },
+    Notícias: {
+      screen: PortalWebView,
+      navigationOptions,
+    },
+    About: {
+      screen: About,
+      navigationOptions,
+    },
+    // ProgrammingGrid: {
+    //   screen: ProgrammingGridTv,
+    //   navigationOptions,
+    // },
+    Live: {
+      screen: Live,
+      navigationOptions,
+    },
+  },
+  {
+    navigationOptions,
+  }
+);
+
 const mainNavigation = createDrawerNavigator(
   {
-    Home: {
+    "Página inicial": {
       screen: Stacknavigator,
       navigationOptions: () => ({
-        drawerIcon: <Icon name="playcircleo" size={20} color="#C9C9C9" />,
+        drawerIcon: <Icon name="home" size={20} color="black" />,
+      }),
+    },
+
+    Notícias: {
+      screen: PortalWebView,
+      navigationOptions: ({ navigation }) => ({
+        drawerIcon: (
+          <Icon name="book-open-page-variant" size={20} color="black" />
+        ),
+        headerTransparent: true,
+        headerTitle: true,
+        headerLeft: (
+          <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+            <Icon
+              name="menu"
+              size={40}
+              color="black"
+              style={{ marginLeft: 10 }}
+            />
+          </TouchableOpacity>
+        ),
+      }),
+    },
+    // Programação: {
+    //   screen: ProgrammingGridTv,
+    //   navigationOptions: ({ navigation }) => ({
+    //     drawerIcon: (
+    //       <Icon name="view-grid-plus-outline" size={20} color="#C9C9C9" />
+    //     ),
+    //   }),
+    // },
+    Sobre: {
+      screen: About,
+      navigationOptions: ({ navigation }) => ({
+        drawerIcon: <Icon name="information-variant" size={20} color="black" />,
+        headerTransparent: true,
+        headerTitle: false,
+        headerLeft: (
+          <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+            <Icon
+              name="menu"
+              size={40}
+              color="black"
+              style={{ marginLeft: 10 }}
+            />
+          </TouchableOpacity>
+        ),
       }),
     },
   },
@@ -287,6 +336,7 @@ const mainNavigation = createDrawerNavigator(
 );
 
 export default createAppContainer(mainNavigation);
+
 const styles = StyleSheet.create({
   drawerContent: {
     flex: 1,

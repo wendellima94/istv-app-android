@@ -1,15 +1,10 @@
-import React from 'react';
+import React from "react";
 
 import { TouchableOpacity, StatusBar, View, Text } from "react-native";
 
-import {
-  Container,
-  Content,
-  ImgPlayStyle,
-  ImglogoStyle,
-} from "./style";
+import { Container, Content, ImgPlayStyle, ImglogoStyle } from "./style";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <>
       <Container
@@ -31,7 +26,7 @@ const Home = () => {
 
           <TouchableOpacity
             style={{ marginTop: 60 }}
-            onPress={() => ('#')}
+            onPress={() => navigation.navigate("Live")}
           >
             <ImgPlayStyle
               source={require("../../images/content/botao-play.png")}
@@ -44,8 +39,8 @@ const Home = () => {
         <StatusBar style="auto" />
       </Container>
     </>
-  )
-}
+  );
+};
 
 const styles = {
   textContent: {
