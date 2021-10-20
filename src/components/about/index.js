@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  ImageBackground,
-  Image,
-  ScrollView,
-} from "react-native";
+import { StyleSheet, View, Text, Image, ScrollView } from "react-native";
 
 const About = () => {
   return (
@@ -59,7 +52,6 @@ const styles = StyleSheet.create({
     textAlign: "left",
     marginBottom: 15,
     marginTop: 35,
-    //fontFamily: 'AvenirNextLTProRegular',
     fontWeight: "normal",
   },
 
@@ -68,13 +60,11 @@ const styles = StyleSheet.create({
     fontSize: 22,
     textAlign: "left",
     marginBottom: 15,
-    //fontFamily: 'AvenirNextLTProRegular',
   },
 
   textContent: {
     color: "#b7b7b7",
     fontSize: 13,
-    //fontFamily: 'AvenirNextLTProRegular',
     lineHeight: 20,
   },
 

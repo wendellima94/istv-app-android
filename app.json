@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "AwesomeProject",
-    "slug": "AwesomeProject",
-    "version": "1.0.0",
+    "name": "ISTV HD",
+    "slug": "ISTV",
+    "version": "4.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -22,10 +22,10 @@
     },
     "android": {
       "adaptiveIcon": {
-
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.android.istv"
     },
     "web": {
       "favicon": "./assets/favicon.png"

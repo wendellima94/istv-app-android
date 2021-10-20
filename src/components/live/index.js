@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, StyleSheet, Button, Dimensions } from "react-native";
+import { View, StyleSheet, Dimensions } from "react-native";
 import { Video, AVPlaybackStatus } from "expo-av";
 import * as ScreenOrientation from "expo-screen-orientation";
 

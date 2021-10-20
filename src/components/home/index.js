@@ -48,7 +48,6 @@ const styles = {
     textAlign: "center",
     fontSize: 16,
     textTransform: "uppercase",
-    //fontFamily: 'AvenirNextLTProRegular',
   },
 };
 export default Home;

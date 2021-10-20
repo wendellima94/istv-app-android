@@ -58,12 +58,8 @@ const navigationOptions = ({ navigation }) => {
   };
 };
 
-const customDrawerComponent = (props, { navigation }) => {
-  const [isDarkTheme, setIsDarkTheme] = React.useState(false);
+const customDrawerComponent = (props) => {
 
-  const toggleTheme = () => {
-    setIsDarkTheme(!isDarkTheme);
-  };
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
