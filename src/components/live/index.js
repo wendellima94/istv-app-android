@@ -3,6 +3,9 @@ import { View, StyleSheet, Dimensions } from "react-native";
 import { Video, AVPlaybackStatus } from "expo-av";
 import * as ScreenOrientation from "expo-screen-orientation";
 
+var heightSize = Dimensions.get("window").height;
+var widthSize = Dimensions.get("window").width;
+
 const Live = () => {
   const video = React.useRef(null);
   const [status, setStatus] = React.useState({});
@@ -45,8 +48,8 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     backgroundColor: "#000",
 
-    width: 380,
-    height: 640,
+    width: widthSize,
+    height: heightSize * 0.88,
   },
   buttons: {
     flexDirection: "row",

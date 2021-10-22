@@ -1,41 +1,56 @@
 import React from "react";
-
-import { TouchableOpacity, StatusBar, View, Text } from "react-native";
+import {
+  TouchableOpacity,
+  StatusBar,
+  View,
+  Text,
+  Dimensions,
+} from "react-native";
 
 import { Container, Content, ImgPlayStyle, ImglogoStyle } from "./style";
+
+const height = Dimensions.get("window").height;
+const width = Dimensions.get("window").width;
 
 const Home = ({ navigation }) => {
   return (
     <>
       <Container
         resizeMode="cover"
-        source={require("../../images/content/istv.gif")}
+        source={require("../../images/content/istv-fundo.gif")}
       >
-        <StatusBar
-          backgroundColor="transparent"
-          barStyle="light-content"
-          translucent
-        />
         <Content>
-          <ImglogoStyle source={require("../../images/content/logo.png")} />
+          <View
+            style={{
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "column",
+              marginTop: height * 0.030,
 
-          <View>
-            <Text style={styles.textContent}>Seu novo</Text>
-            <Text style={styles.textContent}>canal de TV</Text>
-          </View>
-
-          <TouchableOpacity
-            style={{ marginTop: 60 }}
-            onPress={() => navigation.navigate("Live")}
+            }}
           >
-            <ImgPlayStyle
-              source={require("../../images/content/botao-play.png")}
-            />
-            <Text style={styles.textContent}>Assista</Text>
-            <Text style={styles.textContent}>ao vivo</Text>
-          </TouchableOpacity>
-        </Content>
+            <ImglogoStyle source={require("../../images/content/logo.png")} />
+            <TouchableOpacity onPress={() => navigation.navigate("Live")}>
+              <View style={{
+              alignItems: "center",
+              justifyContent: 'space-between',
+              marginTop: height * 0.20,
+            }}>
+                <ImgPlayStyle
+                  source={require("../../images/content/botao-play.png")}
+                />
+                <Text style={styles.textContent}>Assista ao Vivo</Text>
+              </View>
 
+              {/* <Text style={styles.textContent}></Text> */}
+            </TouchableOpacity>
+          </View>
+          <StatusBar
+            backgroundColor="#990000"
+            barStyle="light-content"
+            translucent
+          />
+        </Content>
         <StatusBar style="auto" />
       </Container>
     </>
@@ -45,9 +60,7 @@ const Home = ({ navigation }) => {
 const styles = {
   textContent: {
     color: "#fff",
-    textAlign: "center",
-    fontSize: 16,
-    textTransform: "uppercase",
+    fontSize: height * 0.035,
   },
 };
 export default Home;

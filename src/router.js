@@ -27,9 +27,13 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const navigationOptions = ({ navigation }) => {
   const toHome = () => navigation.navigate("HomePage");
+  const buttonCollor = "#cc6633";
 
   return {
-    headerTransparent: true,
+    headerTransparent: false,
+    headerStyle: {
+      backgroundColor: "#000020",
+    },
     headerTitle: () => (
       <View>
         <TouchableOpacity onPress={toHome}>
@@ -40,7 +44,7 @@ const navigationOptions = ({ navigation }) => {
               flexDirection: "row",
             }}
           >
-            <Icon name="home-outline" color={"white"} size={30} />
+            <Icon name="home" color={buttonCollor} size={30} />
           </View>
         </TouchableOpacity>
       </View>
@@ -52,15 +56,13 @@ const navigationOptions = ({ navigation }) => {
           navigation.dispatch(DrawerActions.toggleDrawer());
         }}
       >
-        <Icon name="menu" color={"white"} size={45} />
+        <Icon name="menu" color={buttonCollor} size={45} />
       </TouchableOpacity>
     ),
   };
 };
 
 const customDrawerComponent = (props) => {
-
-
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View
@@ -310,7 +312,7 @@ const mainNavigation = createDrawerNavigator(
       screen: About,
       navigationOptions: ({ navigation }) => ({
         drawerIcon: <Icon name="information-variant" size={20} color="black" />,
-        headerTransparent: true,
+        headerTransparent: false,
         headerTitle: false,
         headerLeft: (
           <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
