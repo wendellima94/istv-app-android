@@ -10,14 +10,14 @@ import {
 import { Container, Content, ImgPlayStyle, ImglogoStyle } from "./style";
 
 const height = Dimensions.get("window").height;
-const width = Dimensions.get("window").width;
+// const width = Dimensions.get("window").width;
 
 const Home = ({ navigation }) => {
   return (
     <>
       <Container
         resizeMode="cover"
-        source={require("../../images/content/istv-fundo.gif")}
+        source={require("../../images/content/istv-fundo4.gif")}
       >
         <Content>
           <View
@@ -25,17 +25,18 @@ const Home = ({ navigation }) => {
               alignItems: "center",
               justifyContent: "center",
               flexDirection: "column",
-              marginTop: height * 0.030,
-
+              marginTop: height * 0.14,
             }}
           >
             <ImglogoStyle source={require("../../images/content/logo.png")} />
             <TouchableOpacity onPress={() => navigation.navigate("Live")}>
-              <View style={{
-              alignItems: "center",
-              justifyContent: 'space-between',
-              marginTop: height * 0.20,
-            }}>
+              <View
+                style={{
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  marginTop: height * 0.2,
+                }}
+              >
                 <ImgPlayStyle
                   source={require("../../images/content/botao-play.png")}
                 />

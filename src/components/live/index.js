@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
 
     width: widthSize,
-    height: heightSize * 0.88,
+    height: heightSize,
   },
   buttons: {
     flexDirection: "row",

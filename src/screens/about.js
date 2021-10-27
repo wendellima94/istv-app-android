@@ -5,7 +5,7 @@ const About = () => {
   return (
     <ScrollView style={{ backgroundColor: "#151515", flex: 1 }}>
       <Image
-        source={require("../../images/content/img-sobre.png")}
+        source={require("../images/content/img-sobre.png")}
         style={styles.imgSobre}
       />
 

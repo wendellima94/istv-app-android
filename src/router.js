@@ -19,8 +19,8 @@ import {
 } from "react-navigation-drawer";
 import { createStackNavigator } from "react-navigation-stack";
 import Home from "./components/home";
-import About from "./components/about";
 import Live from "./components/live";
+import About from "./screens/about";
 import PortalWebView from "./screens/portal-web-view";
 // import ProgrammingGridTv from "./screens/programming-grid-tv";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -30,7 +30,7 @@ const navigationOptions = ({ navigation }) => {
   const buttonCollor = "#cc6633";
 
   return {
-    headerTransparent: false,
+    headerTransparent: true,
     headerStyle: {
       backgroundColor: "#000020",
     },
@@ -286,7 +286,7 @@ const mainNavigation = createDrawerNavigator(
         drawerIcon: (
           <Icon name="book-open-page-variant" size={20} color="black" />
         ),
-        headerTransparent: true,
+        headerTransparent: false,
         headerTitle: true,
         headerLeft: (
           <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
@@ -312,7 +312,7 @@ const mainNavigation = createDrawerNavigator(
       screen: About,
       navigationOptions: ({ navigation }) => ({
         drawerIcon: <Icon name="information-variant" size={20} color="black" />,
-        headerTransparent: false,
+        headerTransparent: true,
         headerTitle: false,
         headerLeft: (
           <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
