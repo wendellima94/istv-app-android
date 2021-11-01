@@ -2,8 +2,9 @@
   "expo": {
     "name": "ISTV HD",
     "slug": "ISTV",
-    "version": "4.0.0",
-    "orientation": "portrait",
+    "version": "1.0.0",
+    "orientation": "default",
+    
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
@@ -17,8 +18,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "requireFullScreen": true
+      "requireFullScreen": true,
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {

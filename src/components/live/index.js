@@ -1,15 +1,16 @@
 import * as React from "react";
 import { View, StyleSheet, Dimensions } from "react-native";
-import { Video, AVPlaybackStatus } from "expo-av";
+import { Video, AVPlaybackStatus, AVPlayerViewController } from "expo-av";
 import * as ScreenOrientation from "expo-screen-orientation";
 
-var heightSize = Dimensions.get("window").height;
-var widthSize = Dimensions.get("window").width;
+// import RNVideoPlayer from "react-native-advanced-video-player";
+
+const { height, width } = Dimensions.get("window");
 
 const Live = () => {
   const video = React.useRef(null);
   const [status, setStatus] = React.useState({});
-
+  // ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE)
   function setOrientation() {
     if (Dimensions.get("window").height > Dimensions.get("window").width) {
       //Device is in portrait mode, rotate to landscape mode.
@@ -20,8 +21,10 @@ const Live = () => {
     }
   }
   return (
-    <View>
+    <View style={styles.container}>
       <Video
+        shouldPlay
+        presentFullscreenPlayer
         onFullscreenUpdate={setOrientation}
         ref={video}
         style={styles.video}
@@ -29,9 +32,10 @@ const Live = () => {
           uri:
             "https://cdn.jmvstream.com/w/LVW-9883/LVW9883_lFcfKysrHF/playlist.m3u8",
         }}
-        useNativeControls
+        showFullscreenButton={true}
         resizeMode="contain"
         isLooping={true}
+        useNativeControls={true}
         onPlaybackStatusUpdate={(status) => setStatus(() => status)}
       />
     </View>
@@ -48,8 +52,8 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     backgroundColor: "#000",
 
-    width: widthSize,
-    height: heightSize,
+    width: width * 0.90,
+    height: height,
   },
   buttons: {
     flexDirection: "row",
