@@ -20,6 +20,7 @@ const Live = () => {
       ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
     }
   }
+  //
   return (
     <View style={styles.container}>
       <Video
@@ -32,10 +33,12 @@ const Live = () => {
           uri:
             "https://cdn.jmvstream.com/w/LVW-9883/LVW9883_lFcfKysrHF/playlist.m3u8",
         }}
-        showFullscreenButton={true}
+        rate={1.0}
+        volume={1.0}
+        isMuted={false}
+        useNativeControls
         resizeMode="contain"
-        isLooping={true}
-        useNativeControls={true}
+        isLooping={false}
         onPlaybackStatusUpdate={(status) => setStatus(() => status)}
       />
     </View>

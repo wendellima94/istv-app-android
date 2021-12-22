@@ -2,7 +2,7 @@
   "expo": {
     "name": "ISTV HD",
     "slug": "ISTV",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "orientation": "default",
     
     "icon": "./assets/icon.png",
@@ -21,12 +21,13 @@
       "requireFullScreen": true,
       "supportsTablet": true
     },
-    "android": {
+    "android": { 
+      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.android.istv"
+      "package": "aovivo.istv"
     },
     "web": {
       "favicon": "./assets/favicon.png"
