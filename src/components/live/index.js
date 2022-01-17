@@ -20,7 +20,7 @@ const Live = () => {
       ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
     }
   }
-  //
+  
   return (
     <View style={styles.container}>
       <Video

@@ -8,7 +8,6 @@ const About = () => {
         source={require("../images/content/img-sobre.png")}
         style={styles.imgSobre}
       />
-
       <View style={styles.viewContent}>
         {/*SOBRE*/}
         <Text style={styles.title2}>Sobre a ISTV</Text>

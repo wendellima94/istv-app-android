@@ -11,7 +11,7 @@ export const Content = styled.View`
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.02);
 `;
 
 export const ImgPlayStyle = styled.Image`
@@ -21,4 +21,6 @@ export const ImgPlayStyle = styled.Image`
 export const ImglogoStyle = styled.Image`
   width: 100px;
   height: 100px;
+
+  margin-top: 8%;
 `;

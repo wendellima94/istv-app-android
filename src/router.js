@@ -22,7 +22,6 @@ import Home from "./components/home";
 import Live from "./components/live";
 import About from "./screens/about";
 import PortalWebView from "./screens/portal-web-view";
-// import ProgrammingGridTv from "./screens/programming-grid-tv";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const navigationOptions = ({ navigation }) => {
@@ -257,10 +256,6 @@ const Stacknavigator = createStackNavigator(
       screen: About,
       navigationOptions,
     },
-    // ProgrammingGrid: {
-    //   screen: ProgrammingGridTv,
-    //   navigationOptions,
-    // },
     Live: {
       screen: Live,
       navigationOptions,

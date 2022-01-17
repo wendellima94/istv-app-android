@@ -17,7 +17,8 @@ const Home = ({ navigation }) => {
     <>
       <Container
         resizeMode="cover"
-        source={require("../../images/content/istv-fundo4.gif")}
+        // source={require("../../images/content/istv-fundo4.gif")}
+        source={require("../../images/content/Background.png")}
       >
         <Content>
           <View
@@ -28,7 +29,7 @@ const Home = ({ navigation }) => {
               marginTop: height * 0.14,
             }}
           >
-            <ImglogoStyle source={require("../../images/content/logo.png")} />
+            <ImglogoStyle source={require("../../images/content/logoTransparent.png")} />
             <TouchableOpacity onPress={() => navigation.navigate("Live")}>
               <View
                 style={{
