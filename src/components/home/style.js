@@ -1,4 +1,5 @@
-import styled from "styled-components/native";
+// import styled from "styled-components/native";
+import styled from 'rn-css';
 
 export const Container = styled.ImageBackground`
   flex: 1;
@@ -15,8 +16,9 @@ export const Content = styled.View`
 `;
 
 export const ImgPlayStyle = styled.Image`
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
+ 
 `;
 export const ImglogoStyle = styled.Image`
   width: 100px;

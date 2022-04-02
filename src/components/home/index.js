@@ -18,7 +18,7 @@ const Home = ({ navigation }) => {
       <Container
         resizeMode="cover"
         // source={require("../../images/content/istv-fundo4.gif")}
-        source={require("../../images/content/Background.png")}
+        source={require("../../images/content/4.png")}
       >
         <Content>
           <View
@@ -39,7 +39,7 @@ const Home = ({ navigation }) => {
                 }}
               >
                 <ImgPlayStyle
-                  source={require("../../images/content/botao-play.png")}
+                  source={require("../../images/content/botao-play3.png")}
                 />
                 <Text style={styles.textContent}>Assista ao Vivo</Text>
               </View>
